@@ -10,7 +10,8 @@ namespace AspNetCore_Blog.Data
     {
         public System.Data.Entity.DbSet<Post> Posts { get; set; }
 
-        public BlogContext() : base("MsSqlServer")
+        public BlogContext() 
+            : base("MsSqlServer")
         {
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
