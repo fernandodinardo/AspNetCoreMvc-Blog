@@ -1,6 +1,17 @@
+using AspNetCore_Blog.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) 
+    .Build();
+
+string? minhaConexao = config.GetConnectionString("MsSqlServer");
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

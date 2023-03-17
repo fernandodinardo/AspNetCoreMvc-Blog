@@ -8,7 +8,7 @@ namespace AspNetCore_Blog.Data
 {
     public class BlogContext : DbContext
     {
-        public System.Data.Entity.DbSet<Post> Posts { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Post> Posts { get; set; }
 
         public BlogContext() 
             : base("MsSqlServer")
